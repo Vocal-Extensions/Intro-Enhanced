@@ -11,7 +11,7 @@ description: >
 
 category: 'MoviesAndShows'
 artifacts:
-  - 'Jellyfin.Plugin.LocalIntros.dll'
+  - 'IntroEnhanced.dll'
 changelog: |-
   - Unstable: Update to latest Jellyfin preview packages (#60) @crobibero, @jellyfin-bot
   - Update link to Pre-rolls Community website (#56) @klaxusnexus, @crobibero

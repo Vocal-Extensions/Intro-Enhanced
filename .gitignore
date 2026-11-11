@@ -1,10 +1,5 @@
-# build
-bin
-obj
+bin/
+obj/
+.vs/
+.idea/
 artifacts
-
-# ide
-.idea
-.vs
-artifacts
-.idea

@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Jellyfin.Plugin.LocalIntros.Configuration;
+using IntroEnhanced.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Plugins;
 using MediaBrowser.Controller.Library;
 using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
 
-namespace Jellyfin.Plugin.LocalIntros
+namespace IntroEnhanced
 {
     public class LocalIntrosPlugin : BasePlugin<IntroPluginConfiguration>, IHasWebPages
     {

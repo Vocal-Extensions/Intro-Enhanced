@@ -6,15 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Jellyfin.Database.Implementations.Entities;
-using Jellyfin.Plugin.LocalIntros.Configuration;
+using IntroEnhanced.Configuration;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Library;
 using MediaBrowser.Controller.Entities.TV;
 using MediaBrowser.Controller.Entities.Movies;
 using Microsoft.Extensions.Logging;
 
-
-namespace Jellyfin.Plugin.LocalIntros;
+namespace IntroEnhanced;
 public class IntroProvider : IIntroProvider
 {
     private readonly ILogger<IntroProvider> logger;

@@ -8,13 +8,12 @@ using MediaBrowser.Controller.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Jellyfin.Plugin.LocalIntros.Configuration;
+using IntroEnhanced.Configuration;
 using MediaBrowser.Common.Api;
 using MediaBrowser.Controller.Library;
 using Microsoft.Extensions.Logging;
 
-namespace Jellyfin.Plugin.LocalIntros;
-
+namespace IntroEnhanced;
 
 [ApiController]
 [Authorize(Policy = Policies.RequiresElevation)]

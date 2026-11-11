@@ -155,14 +155,14 @@
                 var plugin = {
                     guid: '060ea4dd-4c04-4db2-a961-e10f975a929c'
                 };
-                
+
                 var cleanDate = str => str.split('T')[0];
 
                 var localIntroConfig = {
                     Local: "",
                     DetectedLocalVideos: [],
                     DefaultLocalVideos: [],
-                    TagIntros: [], 
+                    TagIntros: [],
                     GenreIntros: [],
                     StudioIntros: [],
                     IntrosForMoviesOnly: false
@@ -176,7 +176,7 @@
                     //Load Genres from Server.
 
                     Promise.all([
-                        ApiClient.getGenres(ApiClient.getCurrentUserId()), 
+                        ApiClient.getGenres(ApiClient.getCurrentUserId()),
                         ApiClient.getStudios(ApiClient.getCurrentUserId()),
                         ApiClient.getPluginConfiguration(plugin.guid)
                     ]).then(([genreItems, studioItems, config]) => {
@@ -185,7 +185,7 @@
                         document.querySelector('#introsForMoviesOnly').checked = localIntroConfig.IntrosForMoviesOnly;
 
                         $('#local').val(config.Local);
-                        
+
                         var parentCheckboxList = $('#videoSelection');
                         parentCheckboxList.empty();
                         for (var detectedVideo of config.DetectedLocalVideos) {
@@ -233,7 +233,7 @@
                     ApiClient.ajax({ type: 'POST', url, data, contentType: 'application/json' }).then(() => {loadPage()}).catch(ev => alert(ev));
                 }
 
-                var addTagIntroRule = (introId, precedence, prevalence) => 
+                var addTagIntroRule = (introId, precedence, prevalence) =>
                 {
                     var tagRule = {
                         IntroId: introId,
@@ -243,7 +243,7 @@
                     };
                     localIntroConfig.TagIntros.push(tagRule);
                 };
-                var addGenreIntroRule = (introId, precedence, prevalence) => 
+                var addGenreIntroRule = (introId, precedence, prevalence) =>
                 {
                     var genreRule = {
                         IntroId: introId,
@@ -253,7 +253,7 @@
                     };
                     localIntroConfig.GenreIntros.push(genreRule);
                 };
-                var addStudioIntroRule = (introId, precedence, prevalence) => 
+                var addStudioIntroRule = (introId, precedence, prevalence) =>
                 {
                     var studioRule = {
                         IntroId: introId,
@@ -263,7 +263,7 @@
                     };
                     localIntroConfig.StudioIntros.push(studioRule);
                 };
-                var addCurrentDateIntroRule = (introId, precedence, prevalence) => 
+                var addCurrentDateIntroRule = (introId, precedence, prevalence) =>
                 {
                     var currentDateRule = {
                         IntroId: introId,
@@ -274,14 +274,14 @@
                     };
                     localIntroConfig.CurrentDateIntros.push(currentDateRule);
                 };
-                var addDefaultIntroRule = introId => 
+                var addDefaultIntroRule = introId =>
                 {
                     if (localIntroConfig.DefaultLocalVideos.includes(introId) == false) {
                         localIntroConfig.DefaultLocalVideos.push(introId);
                     }
                 };
 
-                var saveChanges = () => 
+                var saveChanges = () =>
                     ApiClient.updatePluginConfiguration(plugin.guid, localIntroConfig);
 
                 var updateUi = () => {
@@ -341,7 +341,7 @@
 
                     console.log(localIntroConfig);
 
-                    var getName = (id) => { 
+                    var getName = (id) => {
                         if (id === null) return "None";
                         for (var video of localIntroConfig.DetectedLocalVideos) {
                             if (video.ItemId === id) return video.Name;
@@ -362,13 +362,13 @@
                         updateUi();
                     } }));
 
-                    var currentDateR = localIntroConfig.CurrentDateIntros.map((currentDate,i) => 
-                    ({ 
-                        type: 'Current Date', 
-                        name: cleanDate(currentDate.DateStart) + " - " + cleanDate(currentDate.DateEnd), 
-                        precedence: currentDate.Precedence, 
-                        prevalence: currentDate.Prevalence, 
-                        introName: getName(currentDate.IntroId), 
+                    var currentDateR = localIntroConfig.CurrentDateIntros.map((currentDate,i) =>
+                    ({
+                        type: 'Current Date',
+                        name: cleanDate(currentDate.DateStart) + " - " + cleanDate(currentDate.DateEnd),
+                        precedence: currentDate.Precedence,
+                        prevalence: currentDate.Prevalence,
+                        introName: getName(currentDate.IntroId),
                         removeMe: () => {
                             localIntroConfig.CurrentDateIntros.splice(i, 1);
                             updateUi();
@@ -411,7 +411,7 @@
                 $('#loadVideosBtn').click(ev => {
                     saveChanges().then(() => loadVideos());
                 });
-                
+
                 $('#clearVideosBtn').click(async ev => {
                     await saveChanges();
                     await clearIntros();
@@ -423,7 +423,7 @@
                 });
 
                 $('#addAllBtn').click(ev => {
-                    
+
                     for (var video of localIntroConfig.DetectedLocalVideos) {
                         addDefaultIntroRule(video.ItemId);
                     }
@@ -468,7 +468,7 @@
                     return false;
                 });
             })();
-            
+
         </script>
     </div>
 </body>

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using MediaBrowser.Model.Plugins;
 
-namespace Jellyfin.Plugin.LocalIntros.Configuration;
+namespace IntroEnhanced.Configuration;
 
 public class IntroPluginConfiguration : BasePluginConfiguration
 {
