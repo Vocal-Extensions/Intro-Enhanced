@@ -1,7 +1,7 @@
 name: 'Intro Enhanced'
 guid: '060ea4dd-4c04-4db2-a961-e10f975a929c'
 imageUrl: "https://raw.githubusercontent.com/Vocal-Extensions/manifest/refs/heads/main/images/Intro-Enhanced.png"
-version: 6
+version: 7
 targetAbi: "12.0.0.0"
 framework: "net10.0"
 owner: 'Zach J Murphy'
@@ -13,5 +13,4 @@ category: 'MoviesAndShows'
 artifacts:
   - 'IntroEnhanced.dll'
 changelog: |-
-  - Unstable: Update to latest Jellyfin preview packages (#60) @crobibero, @jellyfin-bot
-  - Update link to Pre-rolls Community website (#56) @klaxusnexus, @crobibero
+  - Reorganized Plugin Structure
