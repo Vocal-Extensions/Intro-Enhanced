@@ -1,5 +1,10 @@
-bin/
-obj/
-.vs/
-.idea/
+# build
+bin
+obj
 artifacts
+
+# ide
+.idea
+.vs
+artifacts
+.idea
