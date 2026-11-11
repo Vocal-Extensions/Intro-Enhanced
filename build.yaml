@@ -1,9 +1,9 @@
-name: 'Local Intros'
-guid: '07d86795-01f2-4d22-b174-cdc6056c3e7c'
+name: 'Intro Enhanced'
+guid: '060ea4dd-4c04-4db2-a961-e10f975a929c'
 version: 5
 targetAbi: "12.0.0.0"
 framework: "net10.0"
-owner: 'Jellyfin'
+owner: 'Zach J Murphy'
 overview: 'Display flashy intros before movies and other videos'
 description: >
   Select a flashy pre-roll from local storage to run before any video content. The video details are loaded from disk after a video is played from the library from the beginning of the video. A random video is selected, and all videos in the local directory are enabled by default. Specific videos can be enabled or disabled as necessary. After videos are loaded for the first time, additional videos found in the directory are not enabled by default.

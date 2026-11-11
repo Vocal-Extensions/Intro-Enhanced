@@ -1,19 +1,7 @@
-<h1 align="center">Intros for Jellyfin Plugin</h1>
-<h3 align="center">Part of the <a href="https://jellyfin.org">Jellyfin Project</a></h3>
-
-<p align="center">
-<br/>
-<br/>
-<a href="https://github.com/jellyfin/jellyfin-plugin-intros/actions?query=workflow%3A%22Test+Build+Plugin%22">
-<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/jellyfin/jellyfin-plugin-intros/Test%20Build%20Plugin.svg">
-</a>
-<a href="https://github.com/jellyfin/jellyfin-plugin-intros">
-<img alt="MIT License" src="https://img.shields.io/github/license/jellyfin/jellyfin-plugin-intros.svg"/>
-</a>
-<a href="https://github.com/jellyfin/jellyfin-plugin-intros/releases">
-<img alt="Current Release" src="https://img.shields.io/github/release/jellyfin/jellyfin-plugin-intros.svg"/>
-</a>
-</p>
+<div align="center">
+    <h1 style="border: 0px solid transparent;margin-bottom: 2px;">Intro Enhanced</h1>
+    <p>Intros Plugin for Jellyfin</p>
+</div>
 
 ## About
 
