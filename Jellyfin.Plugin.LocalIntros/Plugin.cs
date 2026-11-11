@@ -33,6 +33,7 @@ namespace Jellyfin.Plugin.LocalIntros
             yield return new PluginPageInfo
             {
                 Name = Name,
+                EnableInMainMenu = true,
                 EmbeddedResourcePath = GetType().Namespace + ".Configuration.config.html"
             };
         }
