@@ -58,11 +58,11 @@ public class IntroProvider : IIntroProvider
     {
         switch (item.GetBaseItemKind())
         {
-            case Data.Enums.BaseItemKind.Movie:
+            case Jellyfin.Data.Enums.BaseItemKind.Movie:
                 var movie = item as Movie;
 
                 return (movie.Tags.ToHashSet(),movie.Genres.ToHashSet(),movie.Studios.ToHashSet(), DateTime.Now, item.PremiereDate ?? DateTime.Today);
-            case Data.Enums.BaseItemKind.Episode:
+            case Jellyfin.Data.Enums.BaseItemKind.Episode:
                 var episode = item as Episode;
                 var season = episode.Season;
                 var series = episode.Series;
@@ -80,7 +80,7 @@ public class IntroProvider : IIntroProvider
 
     private IEnumerable<IntroInfo> Local(BaseItem item)
     {
-        if (LocalIntrosPlugin.Instance.Configuration.IntrosForMoviesOnly && item.GetBaseItemKind() != Data.Enums.BaseItemKind.Movie)
+        if (LocalIntrosPlugin.Instance.Configuration.IntrosForMoviesOnly && item.GetBaseItemKind() != Jellyfin.Data.Enums.BaseItemKind.Movie)
             return Enumerable.Empty<IntroInfo>();
 
         if (!File.Exists(introsPath) && !Directory.Exists(introsPath))
